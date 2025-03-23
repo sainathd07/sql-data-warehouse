@@ -65,8 +65,8 @@ BEGIN
 			ELSE 'n/a'
 		END cst_marital_status, -- Normalize marital status values to readable format
 		CASE
-			WHEN UPPER(TRIM(cst_gndr))='F' THEN 'FEMALE'
-			WHEN UPPER(TRIM(cst_gndr))='M' THEN 'MALE'
+			WHEN UPPER(TRIM(cst_gndr))='F' THEN 'Female'
+			WHEN UPPER(TRIM(cst_gndr))='M' THEN 'Male'
 			ELSE 'n/a'
 		END cst_gndr, -- -- Normalize gender values to readable format
 		cst_create_date
@@ -89,8 +89,8 @@ BEGIN
 		RAISE NOTICE '>>Inserting data into silver.crm_prd_info';
 		INSERT INTO silver.crm_prd_info(
 		prd_id,
-		prd_key,
 		cat_id,
+        prd_key,
 		prd_nm,
 		prd_cost,
 		prd_line,
